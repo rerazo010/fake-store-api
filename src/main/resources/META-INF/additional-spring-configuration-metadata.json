@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "component.fakestore.name",
+    "type": "java.lang.String",
+    "description": "Api to access test data"
+  },
+  {
+    "name": "application.version",
+    "type": "java.lang.String",
+    "description": "Version api"
+  },
+  {
+    "name": "component.fakestore.url",
+    "type": "java.lang.String",
+    "description": "A description for 'component.fakestore.url'"
+  }
+]}

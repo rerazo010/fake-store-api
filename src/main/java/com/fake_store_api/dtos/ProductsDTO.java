@@ -6,24 +6,22 @@ public class ProductsDTO {
 
 	@JsonProperty(value = "id")
 	private Long id;
-	
+
 	@JsonProperty(value = "title")
 	private String title;
-	
+
 	@JsonProperty(value = "price")
 	private Float price;
-	
+
 	@JsonProperty(value = "description")
 	private String description;
-	
+
 	@JsonProperty(value = "category")
 	private String category;
-	
+
 	@JsonProperty(value = "image")
 	private String image;
 
-	
-	
 	public ProductsDTO(Long id, String title, Float price, String description, String category, String image) {
 		super();
 		this.id = id;
@@ -32,6 +30,10 @@ public class ProductsDTO {
 		this.description = description;
 		this.category = category;
 		this.image = image;
+	}
+
+	public ProductsDTO() {
+		super();
 	}
 
 	public Long getId() {
@@ -87,7 +89,5 @@ public class ProductsDTO {
 		return "ProductsDTO [id=" + id + ", title=" + title + ", price=" + price + ", description=" + description
 				+ ", category=" + category + ", image=" + image + "]";
 	}
-	
-	
 
 }
