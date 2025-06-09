@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.fake_store_api.client.ProductsClient;
+import com.fake_store_api.client.FakeStoreClient;
 import com.fake_store_api.dtos.ProductsDTO;
 import com.fake_store_api.dtos.ResponseDTO;
 import com.fake_store_api.service.ProductsService;
@@ -15,7 +15,7 @@ import com.fake_store_api.util.ResponseFactory;
 public class ProductsServiceImpl implements ProductsService {
 
 	@Autowired
-	ProductsClient productsClient;
+	FakeStoreClient productsClient;
 
 	@Override
 	public ResponseEntity<ResponseDTO> getAllProducts() {

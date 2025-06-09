@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.fake_store_api.dtos.CartsDTO;
 import com.fake_store_api.dtos.ProductsDTO;
 
 import com.fake_store_api.client.fallback.ProductsClientFallback;
 
 @FeignClient(name = "${component.fakestore.name}",url = "${component.fakestore.url}", fallbackFactory = ProductsClientFallback.class)
-public interface ProductsClient {
+public interface FakeStoreClient {
 
+	//Products endpoints
+	
 	@GetMapping(value = "/products")
 	List<ProductsDTO> getAllProducts();
 	
@@ -31,5 +34,22 @@ public interface ProductsClient {
 	
 	@DeleteMapping(value = "/products/{id}")
 	ProductsDTO deleteProduct(@PathVariable("id") Long id);
+	
+	//Carts endpoints
+	
+	@GetMapping(value = "/carts")
+	List<CartsDTO> getAllCarts();
+	
+	@PostMapping(value = "/carts")
+	CartsDTO createCart(@RequestBody CartsDTO cartDTO);
+	
+	@GetMapping(value = "/carts/{id}")
+	CartsDTO getCart(@PathVariable("id") Long id);
+	
+	@PutMapping(value = "/carts/{id}")
+	CartsDTO updateCart(@PathVariable("id") Long id,@RequestBody CartsDTO cartDTO);
+	
+	@DeleteMapping(value = "/carts/{id}")
+	CartsDTO deleteCart(@PathVariable("id") Long id);
 
 }
