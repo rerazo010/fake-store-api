@@ -85,9 +85,9 @@ public class ProductsClientFallback implements FallbackFactory<FakeStoreClient> 
 			private void validateException() {
 				if (cause instanceof FeignException) {
 					int status = ((FeignException) cause).status();
-					log.error("Error getting products: status code {}", status);
+					log.error("Error getting data: status code {}", status);
 				} else {
-					log.error("Unexpected error when retrieving products", cause);
+					log.error("Unexpected error when retrieving data", cause);
 				}
 			};
 			

@@ -19,9 +19,9 @@ public class PaymentsControllers {
 	PaymentsService paymentsService;
 	
 	@PostMapping(value = "/pay")
-	public ResponseEntity<ResponseDTO> payOrder(@RequestParam(value = "cartId") Long cartId,
+	public ResponseEntity<ResponseDTO> payOrder(@RequestParam(value = "orderId") Long orderId,
 			@RequestParam(value = "userId") Long userId) {
-		return paymentsService.payOrder(userId, cartId);
+		return paymentsService.payOrder(userId, orderId);
 	}
 
 }

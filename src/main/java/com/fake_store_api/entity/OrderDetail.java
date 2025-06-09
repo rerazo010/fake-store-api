@@ -15,7 +15,9 @@ public class OrderDetail {
 
 	// @ManyToOne(fetch = FetchType.LAZY, optional = false)
 	// @JoinColumn(name = "order_id", nullable = false)
-	private Order order;
+	// private Order order;
+
+	private Long orderId;
 
 	// @Column(name="product_id")
 	private Long productId;
@@ -30,9 +32,10 @@ public class OrderDetail {
 		super();
 	}
 
-	public OrderDetail(Long detailId, Long productId, Long quantity, Float totalPrice) {
+	public OrderDetail(Long detailId, Long orderId, Long productId, Long quantity, Float totalPrice) {
 		super();
 		this.detailId = detailId;
+		this.orderId = orderId;
 		this.productId = productId;
 		this.quantity = quantity;
 		this.totalPrice = totalPrice;
@@ -45,7 +48,6 @@ public class OrderDetail {
 	public void setDetailId(Long detailId) {
 		this.detailId = detailId;
 	}
-
 
 	public Long getProductId() {
 		return productId;
@@ -71,18 +73,18 @@ public class OrderDetail {
 		this.totalPrice = totalPrice;
 	}
 
-	public Order getOrder() {
-		return order;
+	public Long getOrderId() {
+		return orderId;
 	}
 
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
 	public String toString() {
-		return "OrderDetail [detailId=" + detailId + ", productId=" + productId + ", quantity="
-				+ quantity + ", totalPrice=" + totalPrice + "]";
+		return "OrderDetail [detailId=" + detailId + ", productId=" + productId + ", quantity=" + quantity
+				+ ", totalPrice=" + totalPrice + "]";
 	}
 
 }
